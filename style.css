@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Poppins', sans-serif;
+}
+
+main{
+	background-image: url(img/right2.png);
+	background-repeat: no-repeat;
+	background-position: right;
+	width: 100%;
+	/*width: 100vw;*/
+	height: 100vh;
+}
+#bank{
+	background-image: url(img/right4.png);
+	background-repeat: no-repeat;
+	background-position: left;
+	width: 100vw;
+	height: 100vh;
+}
+.container .right{
+
+}
+.container .left p{
+	color: gray;
+	margin-bottom: 15px;
+}
+.container .special-text, #bank .container #userName{
+	color: rgba(0, 200, 45, 0.6);
+}
+.container h2{
+	font-size: 40px;
+	line-height: 50px;
+	margin-bottom: 10px;
+}
+.container .row .left img{
+	width:90%;
+}
+.container .row .right img{
+	width: 200px;
+}
+
+#bank{
+	display: none;
+}
+
+
+#bank .row .col-md-4 div{
+	background-color: tomato;
+	color: white;
+	padding: 30px;
+	margin: 15px;
+	border-radius: 10px;
+
+}
+#bank .row .col-md-4 .deposit{
+	background-color: blue;
+}
+#bank .row .col-md-4 .withdraw{
+	background-color: yellowgreen;
+}
+#bank .row .col-md-4 .balance{
+	background-color: orange;
+}
+
+#bank .container .user-input .col-md-6 div{
+	padding: 35px 20px;
+	margin: 20px;
+	box-shadow: 0 0 18px 8px rgba(0, 0, 0, 0.1);
+	background-color: white;
+}
+
+/*responsive*/
+
+@media (max-width: 500px){
+	.container .row .left img{
+		position: absolute;
+	display: none;
+}
+	main{
+		height: 100%;
+	}
+}
