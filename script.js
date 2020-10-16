@@ -33,9 +33,20 @@ const prevBtn = document.getElementById('prevBtn');
 prevBtn.addEventListener('click', function(){
 	let mainPage = document.getElementById('main');
 		mainPage.style.display= 'block'
-		let bankPage = document.getElementById('bank');
+	let bankPage = document.getElementById('bank');
 		bankPage.style.display = 'none';
 })
+
+//check input of deposit and withraw (validation)
+function checkInputValidation(inputId, currentId, upadatedValue){
+	if(inputId.value <= 0 || inputId.value == "" || isNaN(inputId.value)){
+		console.log('Invalid input')
+	}
+	else{
+		document.getElementById(currentId).innerHTML = upadatedValue;
+	}
+
+}
 
 
 
@@ -51,14 +62,17 @@ depositBtn.addEventListener('click', function(){
 	
 	let addedDeposit= depositAmountNum + currentDepositNum;
 
-	 document.getElementById('currentDepositAmount').innerHTML = addedDeposit;
+	//check input validation
+	checkInputValidation(depositAmountInput,'currentDepositAmount', addedDeposit )
 
 
 	//setting added banlance
 	let currentBalanceAmount = document.getElementById('currentBalanceAmount').innerHTML;
 	let currentBalanceNum = parseFloat(currentBalanceAmount)
 	let addedBalance = depositAmountNum + currentBalanceNum;
-	document.getElementById('currentBalanceAmount').innerHTML = addedBalance
+
+	//check input validation
+	checkInputValidation(depositAmountInput, 'currentBalanceAmount', addedBalance);
 
 	//eraging depositAmountInput value for new value a
 	depositAmountInput.value = '';
@@ -78,21 +92,22 @@ withdrawBtn.addEventListener('click', function(){
 	let currentBalanceAmount = document.getElementById('currentBalanceAmount').innerHTML;
 	let currentBalanceNum = parseFloat(currentBalanceAmount)
 
+
 	let addedWithdraw = withdrawAmountNum + currentWithdrawNum;
 
-	
+	//check input validation for added withdraw
+	checkInputValidation(withdrawAmountInput, 'currentWithdrawAmount', addedWithdraw);
 
 
 	// debuted balance
 	let debutedBalance = currentBalanceNum - withdrawAmountNum;
-	if(debutedBalance < 0){
 
-	}else{
-		document.getElementById('currentBalanceAmount').innerHTML = debutedBalance;
-		document.getElementById('currentWithdrawAmount').innerHTML = addedWithdraw;
-	}
+
+	//check input validation for debuted balance
+	checkInputValidation(withdrawAmountInput, 'currentBalanceAmount', debutedBalance)
 	
 	
 	//eraging withdrawAmountInput value for new value a
 	withdrawAmountInput.value = '';
 })
+
