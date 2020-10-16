@@ -1,9 +1,6 @@
 const enterBtn = document.getElementById('enterBtn');
 
 
-
-
-
 enterBtn.addEventListener('click', function(){
 	let loginName = document.getElementById('loginName');
 	let loginPass = document.getElementById('loginPass');
@@ -27,6 +24,12 @@ enterBtn.addEventListener('click', function(){
 
 	}
 })
+
+//form submitting
+document.getElementById('myForm').addEventListener('submit', function(event){
+	event.preventDefault();
+})
+
 
 //prev button
 const prevBtn = document.getElementById('prevBtn');
@@ -71,6 +74,10 @@ depositBtn.addEventListener('click', function(){
 	let currentBalanceNum = parseFloat(currentBalanceAmount)
 	let addedBalance = depositAmountNum + currentBalanceNum;
 
+
+
+
+
 	//check input validation
 	checkInputValidation(depositAmountInput, 'currentBalanceAmount', addedBalance);
 
@@ -95,7 +102,11 @@ withdrawBtn.addEventListener('click', function(){
 
 	let addedWithdraw = withdrawAmountNum + currentWithdrawNum;
 
-	//check input validation for added withdraw
+	if(withdrawAmountInput.value > currentBalanceNum){
+		console.log("getter than current balance")
+	}
+	else{
+			//check input validation for added withdraw
 	checkInputValidation(withdrawAmountInput, 'currentWithdrawAmount', addedWithdraw);
 
 
@@ -105,6 +116,9 @@ withdrawBtn.addEventListener('click', function(){
 
 	//check input validation for debuted balance
 	checkInputValidation(withdrawAmountInput, 'currentBalanceAmount', debutedBalance)
+	}
+
+
 	
 	
 	//eraging withdrawAmountInput value for new value a

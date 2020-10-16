@@ -15,7 +15,8 @@ main{
 	background-position: right;
 	width: 100%;
 	/*width: 100vw;*/
-	height: 100vh;
+	/*height: 100vh;*/
+
 }
 #bank{
 	background-image: url(img/right4.png);
@@ -44,6 +45,10 @@ main{
 }
 .container .row .right img{
 	width: 200px;
+}
+/*form*/
+#myForm{
+	width: 75%;
 }
 
 #bank{
@@ -85,5 +90,8 @@ main{
 }
 	main{
 		height: 100%;
+	}
+	#myForm{
+		width: 100%;
 	}
 }
